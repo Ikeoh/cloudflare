@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estratégia Cloudflare R2 - Apresentação Executiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      input[type="range"] {
+        cursor: pointer;
+      }
+      .transition-all {
+        transition: all 0.3s ease;
+      }
+      .card-shadow {
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-900 text-white py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span class="text-xl font-bold tracking-widest uppercase text-blue-200">Modernização de Infraestrutura</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+          Nuvem de Alta Performance:<br />
+          <span class="text-orange-400">Sem o Custo Brasil.</span>
+        </h1>
+        <p class="text-xl text-blue-100 max-w-2xl mb-8 font-light italic">
+          Proposta estratégica para a adoção de armazenamento em nuvem focado em eficiência financeira e liberdade de dados em São Paulo.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20">
+            <p class="text-xs uppercase tracking-widest text-blue-300 mb-1 font-bold">Referência Regional</p>
+            <p class="text-3xl font-black">São Paulo (SP)</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20">
+            <p class="text-xs uppercase tracking-widest text-blue-300 mb-1 font-bold">Eficiência Financeira</p>
+            <p class="text-3xl font-black text-green-400" id="hero-saving-pct">~90%</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 -mt-10">
+      <!-- Contexto Inicial -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden group">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 bg-blue-600 text-white rounded-2xl shadow-lg shadow-blue-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-slate-800 tracking-tight">O que é Cloud Storage?</h2>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4 italic">
+            É o nosso <strong>armazém digital infinito</strong>. Em vez de servidores físicos locais, utilizamos uma infraestrutura global segura.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2 text-sm text-slate-700 font-medium">
+              <span class="text-blue-600 mt-1">●</span>
+              <span><strong>Escalabilidade:</strong> Sem limites físicos de espaço.</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-slate-700 font-medium">
+              <span class="text-blue-600 mt-1">●</span>
+              <span><strong>Segurança:</strong> Dados replicados contra qualquer falha local.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden group">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 bg-orange-500 text-white rounded-2xl shadow-lg shadow-orange-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-slate-800 tracking-tight">Quem é a Cloudflare?</h2>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4 text-sm font-medium">Autoridade global em infraestrutura, lidando com <strong>~20% do tráfego mundial</strong>.</p>
+          <div class="grid grid-cols-2 gap-4 mt-2">
+            <div class="p-3 bg-orange-50/50 rounded-2xl border border-orange-100 text-center">
+              <p class="text-xl font-black text-orange-600">330+</p>
+              <p class="text-[10px] uppercase font-bold text-orange-800">Cidades Globais</p>
+            </div>
+            <div class="p-3 bg-orange-50/50 rounded-2xl border border-orange-100 text-center">
+              <p class="text-xl font-black text-orange-600">Referência</p>
+              <p class="text-[10px] uppercase font-bold text-orange-800 tracking-tighter text-center">Segurança Cibernética</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Glossário Aprofundado -->
+      <section class="mb-16">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-slate-800 mb-2">Entendendo os Custos da Nuvem</h2>
+          <p class="text-slate-500 max-w-2xl mx-auto italic">Para uma decisão estratégica, é preciso compreender como cada componente impacta a fatura final.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Egress -->
+          <div class="bg-white p-8 rounded-3xl shadow-lg border-l-4 border-l-indigo-500 border border-slate-100">
+            <div class="text-indigo-600 mb-4 bg-indigo-50 w-fit p-3 rounded-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Egresso (Saída de Dados)</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4 italic">É a cobrança sobre os dados que <strong>saem</strong> da nuvem para o usuário.</p>
+            <div class="bg-slate-50 p-4 rounded-2xl text-[11px] text-slate-500 italic">
+              <strong>O Risco:</strong> "Taxa sobre o sucesso". Quanto mais usuários acessam nossos dados, mais caro fica. No R2, esta taxa é <strong>zero</strong>.
+            </div>
+          </div>
+
+          <!-- Lock-in -->
+          <div class="bg-white p-8 rounded-3xl shadow-lg border-l-4 border-l-orange-400 border border-slate-100 relative overflow-hidden">
+            <div class="text-orange-600 mb-4 bg-orange-50 w-fit p-3 rounded-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Vendor Lock-in</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4 italic">Dificuldade financeira de trocar de fornecedor no futuro devido às altas taxas de saída.</p>
+            <div class="bg-slate-50 p-4 rounded-2xl text-[11px] text-slate-500 italic">
+              <strong>Prevenção:</strong> Escolher o R2 garante que nossos dados permaneçam portáteis e acessíveis sem "multas" de migração.
+            </div>
+          </div>
+
+          <!-- Escrita -->
+          <div class="bg-white p-8 rounded-3xl shadow-lg border-l-4 border-l-blue-500 border border-slate-100">
+            <div class="text-blue-600 mb-4 bg-blue-50 w-fit p-3 rounded-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Escrita (Classe A)</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4 italic">Custo para <strong>inserir ou modificar</strong> dados.</p>
+            <div class="bg-slate-50 p-4 rounded-2xl text-[11px] text-slate-500 italic uppercase font-bold tracking-widest">Exemplos: Upload de ficheiros e criação de backups.</div>
+          </div>
+
+          <!-- Leitura -->
+          <div class="bg-white p-8 rounded-3xl shadow-lg border-l-4 border-l-green-500 border border-slate-100">
+            <div class="text-green-600 mb-4 bg-green-50 w-fit p-3 rounded-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Leitura (Classe B)</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4 italic">Custo para <strong>visualizar ou consultar</strong> dados.</p>
+            <div class="bg-slate-50 p-4 rounded-2xl text-[11px] text-slate-500 italic uppercase font-bold tracking-widest">Exemplos: Abrir uma imagem ou gerar um relatório.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Configuração de Moeda -->
+      <section class="mb-12 bg-white border border-slate-200 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+        <div class="flex items-center gap-4">
+          <div class="bg-indigo-600 text-white p-3 rounded-xl shadow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900">Conversão de Orçamento (R$)</h4>
+            <p class="text-sm text-slate-500 italic">Custo base: São Paulo (sa-east-1) vs. Global.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 bg-slate-50 p-2 rounded-xl border border-slate-200">
+          <span class="pl-3 font-bold text-slate-400">R$</span>
+          <input type="number" step="0.01" id="exchange-rate" value="5.50" class="w-24 p-2 text-xl font-bold text-indigo-900 bg-transparent outline-none" />
+        </div>
+      </section>
+
+      <!-- Tabela Comparativa Detalhada -->
+      <section class="mb-20 overflow-hidden bg-white rounded-3xl shadow-lg border border-slate-200">
+        <table class="w-full text-left">
+          <thead class="bg-slate-50 border-b border-slate-200">
+            <tr>
+              <th class="p-6 font-bold text-slate-500 uppercase text-xs tracking-widest">Serviço / Operação</th>
+              <th class="p-6 font-bold text-slate-500 uppercase text-xs tracking-widest text-center">AWS São Paulo</th>
+              <th class="p-6 font-bold text-indigo-700 bg-indigo-50/50 uppercase text-xs tracking-widest text-center">Cloudflare R2</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-sm font-medium">
+            <tr>
+              <td class="p-6">Armazenamento (por GB/mês)</td>
+              <td class="p-6 text-center font-mono" id="table-aws-storage">R$ 0,00</td>
+              <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center font-mono" id="table-r2-storage">R$ 0,00</td>
+            </tr>
+            <tr>
+              <td class="p-6 font-bold text-orange-600 italic">Saída de Dados (Egress / GB)</td>
+              <td class="p-6 text-center font-mono" id="table-aws-egress">R$ 0,00</td>
+              <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center uppercase tracking-tighter decoration-green-400 underline underline-offset-4">Grátis (R$ 0)</td>
+            </tr>
+            <tr>
+              <td class="p-6">Escrita (Classe A / 1M ops)</td>
+              <td class="p-6 text-center font-mono" id="table-aws-opsa">R$ 0,00</td>
+              <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center font-mono" id="table-r2-opsa">R$ 0,00</td>
+            </tr>
+            <tr>
+              <td class="p-6">Leitura (Classe B / 1M ops)</td>
+              <td class="p-6 text-center font-mono" id="table-aws-opsb">R$ 0,00</td>
+              <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center font-mono" id="table-r2-opsb">R$ 0,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Simulador de Projeto Interativo -->
+      <section class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200 mb-20">
+        <div class="md:flex">
+          <div class="md:w-1/2 p-8 md:p-12 bg-slate-50 border-r border-slate-200">
+            <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">Simulador de Investimento</h2>
+            <div class="space-y-10">
+              <div>
+                <div class="flex justify-between items-end mb-4">
+                  <label class="text-sm font-bold text-slate-600 uppercase">Armazenamento (GB)</label>
+                  <span class="text-2xl font-black text-blue-600" id="display-storage">500 GB</span>
+                </div>
+                <input type="range" id="input-storage" min="100" max="100000" step="100" value="500" class="w-full h-2 bg-slate-200 rounded-lg appearance-none accent-blue-600" />
+              </div>
+              <div>
+                <div class="flex justify-between items-end mb-4 text-orange-600">
+                  <label class="text-sm font-bold uppercase">Saída de Dados (Egress)</label>
+                  <span class="text-2xl font-black" id="display-egress">1.0 TB</span>
+                </div>
+                <input type="range" id="input-egress" min="0" max="100000" step="500" value="1000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none accent-orange-500" />
+              </div>
+              <div class="grid grid-cols-2 gap-6 pt-4 border-t border-slate-200">
+                <div>
+                  <label class="text-[10px] font-bold text-slate-400 uppercase block mb-2 text-center tracking-widest">Escrita (Milhões)</label>
+                  <input type="number" id="input-opsa" value="1" class="w-full p-2 bg-white border border-slate-200 rounded-lg text-center font-bold text-indigo-900 outline-none" />
+                </div>
+                <div>
+                  <label class="text-[10px] font-bold text-slate-400 uppercase block mb-2 text-center tracking-widest">Leitura (Milhões)</label>
+                  <input type="number" id="input-opsb" value="10" class="w-full p-2 bg-white border border-slate-200 rounded-lg text-center font-bold text-indigo-900 outline-none" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 p-8 md:p-12 bg-white flex flex-col justify-center">
+            <h3 class="text-slate-400 font-bold uppercase tracking-widest text-[10px] mb-8 italic text-center md:text-left">Projeção Mensal Estimada</h3>
+            <div class="space-y-8">
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-xs font-bold text-slate-400 italic uppercase">AWS S3 (São Paulo)</span>
+                  <span class="font-bold text-slate-800 text-xl" id="aws-total">R$ 0,00</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden"><div class="bg-slate-300 h-full w-full"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-xs font-bold text-indigo-600 uppercase underline decoration-2 decoration-indigo-200 underline-offset-4 tracking-wider">Cloudflare R2 (Proposta)</span>
+                  <span class="font-bold text-indigo-600 text-3xl" id="r2-total">R$ 0,00</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                  <div id="progress-r2" class="bg-indigo-600 h-full transition-all duration-700 ease-out" style="width: 10%"></div>
+                </div>
+              </div>
+              <div class="pt-8 border-t border-slate-100">
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-3xl border border-green-100 relative overflow-hidden text-center md:text-left shadow-inner">
+                  <p class="text-green-800 text-[10px] uppercase font-black tracking-[0.2em] mb-2 italic">Eficiência Gerada / Mês</p>
+                  <p class="text-5xl font-black text-green-600 mb-2 tracking-tighter" id="savings-val">R$ 0,00</p>
+                  <p class="text-green-700 font-bold text-sm italic" id="savings-pct">Economia de 0% no projeto</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-16 px-6 border-t border-slate-200 mt-12 bg-white text-center">
+      <p class="text-slate-400 text-xs font-medium uppercase tracking-[0.3em]">Planejamento de Infraestrutura Brasil — Dezembro 2025</p>
+      <p class="text-[9px] text-slate-300 mt-4 max-w-xl mx-auto italic leading-relaxed">
+        * Nota Técnica: Preços baseados na região sa-east-1 da AWS. O Cloudflare R2 opera com preço global unificado, eliminando a penalidade geográfica para empresas brasileiras.
+      </p>
+    </footer>
+
+    <script>
+      // Dados validados - São Paulo (sa-east-1)
+      const awsSP = {
+        storage: 0.0405,
+        egress: 0.15,
+        opsA: 7.0, // Por 1M
+        opsB: 0.56, // Por 1M
+      };
+      const r2Global = {
+        storage: 0.015,
+        egress: 0,
+        opsA: 4.5, // Por 1M
+        opsB: 0.36, // Por 1M
+      };
+
+      const inputStorage = document.getElementById("input-storage");
+      const inputEgress = document.getElementById("input-egress");
+      const inputOpsA = document.getElementById("input-opsa");
+      const inputOpsB = document.getElementById("input-opsb");
+      const exchangeRateInput = document.getElementById("exchange-rate");
+
+      function updateUI() {
+        const storage = parseFloat(inputStorage.value);
+        const egress = parseFloat(inputEgress.value);
+        const opsAVal = parseFloat(inputOpsA.value) || 0;
+        const opsBVal = parseFloat(inputOpsB.value) || 0;
+        const rate = parseFloat(exchangeRateInput.value) || 5.5;
+
+        // Update displays
+        document.getElementById("display-storage").innerText = storage >= 1000 ? (storage / 1024).toFixed(1) + " TB" : storage + " GB";
+        document.getElementById("display-egress").innerText = (egress / 1024).toFixed(1) + " TB";
+
+        // Calculations in USD then converted
+        const awsUSD = storage * awsSP.storage + egress * awsSP.egress + opsAVal * awsSP.opsA + opsBVal * awsSP.opsB;
+        const r2USD = storage * r2Global.storage + egress * r2Global.egress + opsAVal * r2Global.opsA + opsBVal * r2Global.opsB;
+
+        const awsBRL = awsUSD * rate;
+        const r2BRL = r2USD * rate;
+        const savings = awsBRL - r2BRL;
+        const savingsPct = awsBRL > 0 ? Math.round((savings / awsBRL) * 100) : 0;
+
+        // Set Values
+        document.getElementById("aws-total").innerText = awsBRL.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+        document.getElementById("r2-total").innerText = r2BRL.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+        document.getElementById("savings-val").innerText = savings.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+        document.getElementById("savings-pct").innerText = "Evitamos " + savingsPct + "% de custos desnecessários";
+        document.getElementById("hero-saving-pct").innerText = "~" + savingsPct + "%";
+
+        // Progress Bar
+        const pctBar = (r2BRL / awsBRL) * 100;
+        document.getElementById("progress-r2").style.width = Math.max(pctBar, 10) + "%";
+
+        // Table update
+        document.getElementById("table-aws-storage").innerText = "R$ " + (awsSP.storage * rate).toFixed(4).replace(".", ",");
+        document.getElementById("table-r2-storage").innerText = "R$ " + (r2Global.storage * rate).toFixed(4).replace(".", ",");
+        document.getElementById("table-aws-egress").innerText = "R$ " + (awsSP.egress * rate).toFixed(4).replace(".", ",");
+        document.getElementById("table-aws-opsa").innerText = "R$ " + (awsSP.opsA * rate).toFixed(4).replace(".", ",");
+        document.getElementById("table-r2-opsa").innerText = "R$ " + (r2Global.opsA * rate).toFixed(4).replace(".", ",");
+        document.getElementById("table-aws-opsb").innerText = "R$ " + (awsSP.opsB * rate).toFixed(4).replace(".", ",");
+        document.getElementById("table-r2-opsb").innerText = "R$ " + (r2Global.opsB * rate).toFixed(4).replace(".", ",");
+      }
+
+      [inputStorage, inputEgress, inputOpsA, inputOpsB, exchangeRateInput].forEach((el) => el.addEventListener("input", updateUI));
+
+      // Init
+      updateUI();
+    </script>
+  </body>
+</html>
