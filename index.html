@@ -19,6 +19,15 @@
       .card-shadow {
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
       }
+      /* Hide Spinners */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
       /* Presentation State Classes */
       .presentation-hidden {
         opacity: 0;
@@ -142,9 +151,9 @@
 
       <!-- Contexto Inicial -->
       <section id="details" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 scroll-mt-24">
-        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden group">
+        <div class="bg-white p-8 rounded-3xl shadow-xl border-l-4 border-l-slate-900 border border-slate-100 relative overflow-hidden group">
           <div class="flex items-center gap-3 mb-6">
-            <div class="p-3 bg-blue-600 text-white rounded-2xl shadow-lg shadow-blue-200">
+            <div class="p-3 bg-slate-900 text-white rounded-2xl shadow-lg shadow-slate-200">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
@@ -155,20 +164,26 @@
             Para a nossa nova plataforma, precisamos de uma solução que escale infinitamente sem a complexidade de gerenciar servidores de arquivos tradicionais.
           </p>
           <ul class="space-y-3">
-            <li onclick="openModal('flexibilidade')" class="flex items-start gap-2 text-sm text-slate-700 font-medium cursor-pointer hover:bg-slate-50 p-2 rounded-lg transition-colors group/item">
-              <span class="text-blue-600 mt-1 group-hover/item:text-blue-800">●</span>
-              <span><strong>Flexibilidade:</strong> Perfeito para imagens, backups e logs da aplicação TB GREEN. <span class="text-blue-400 text-xs ml-1">(Ver mais)</span></span>
+            <li onclick="openModal('flexibilidade')" title="Clique para ver mais detalhes" class="flex items-center justify-between gap-2 text-sm text-slate-700 font-medium cursor-pointer hover:bg-slate-50 p-2 rounded-lg transition-all border border-transparent hover:border-slate-200 group/item">
+              <div class="flex items-start gap-2">
+                <span class="text-slate-900 mt-1">●</span>
+                <span><strong>Flexibilidade:</strong> Perfeito para imagens, backups e logs.</span>
+              </div>
+              <span class="text-[9px] text-slate-400 opacity-0 group-hover/item:opacity-100 transition-opacity font-bold uppercase tracking-tighter shrink-0">Ver mais</span>
             </li>
-            <li onclick="openModal('cdn')" class="flex items-start gap-2 text-sm text-slate-700 font-medium cursor-pointer hover:bg-slate-50 p-2 rounded-lg transition-colors group/item">
-              <span class="text-blue-600 mt-1 group-hover/item:text-blue-800">●</span>
-              <span><strong>Integração CDN:</strong> O conteúdo fica "na borda", mais perto do usuário final. <span class="text-blue-400 text-xs ml-1">(Ver mais)</span></span>
+            <li onclick="openModal('cdn')" title="Clique para ver mais detalhes" class="flex items-center justify-between gap-2 text-sm text-slate-700 font-medium cursor-pointer hover:bg-slate-50 p-2 rounded-lg transition-all border border-transparent hover:border-slate-200 group/item">
+              <div class="flex items-start gap-2">
+                <span class="text-slate-900 mt-1">●</span>
+                <span><strong>Integração CDN:</strong> O conteúdo fica "na borda", mais perto do usuário final.</span>
+              </div>
+              <span class="text-[9px] text-slate-400 opacity-0 group-hover/item:opacity-100 transition-opacity font-bold uppercase tracking-tighter shrink-0">Ver mais</span>
             </li>
           </ul>
         </div>
 
-        <div class="bg-white p-8 rounded-3xl shadow-xl border-l-4 border-l-orange-500 border border-slate-100 relative overflow-hidden group">
+        <div class="bg-white p-8 rounded-3xl shadow-xl border-l-4 border-l-slate-900 border border-slate-100 relative overflow-hidden group">
           <div class="flex items-center gap-3 mb-6">
-            <div class="p-3 bg-orange-500 text-white rounded-2xl shadow-lg shadow-orange-200">
+            <div class="p-3 bg-slate-900 text-white rounded-2xl shadow-lg shadow-slate-200">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
@@ -179,21 +194,33 @@
             Ao contratar a Cloudflare, não levamos apenas storage, mas herdamos a segurança da rede mais robusta do mundo.
           </p>
           <div class="grid grid-cols-2 gap-3 mt-2">
-            <div onclick="openModal('aes')" class="flex items-center gap-2 p-2 bg-orange-50 rounded-lg cursor-pointer hover:bg-orange-100 transition-colors">
-              <svg class="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              <span class="text-xs font-bold text-orange-900">Criptografia AES-256</span>
+            <div onclick="openModal('aes')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-2 bg-slate-50 rounded-lg cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs font-bold text-slate-900">Criptografia AES-256</span>
+              </div>
+              <span class="text-[9px] text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-tighter">Ver mais</span>
             </div>
-            <div onclick="openModal('ddos')" class="flex items-center gap-2 p-2 bg-orange-50 rounded-lg cursor-pointer hover:bg-orange-100 transition-colors">
-              <svg class="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              <span class="text-xs font-bold text-orange-900">Proteção DDoS L7</span>
+            <div onclick="openModal('ddos')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-2 bg-slate-50 rounded-lg cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs font-bold text-slate-900">Proteção DDoS L7</span>
+              </div>
+              <span class="text-[9px] text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-tighter">Ver mais</span>
             </div>
-            <div onclick="openModal('iso')" class="flex items-center gap-2 p-2 bg-orange-50 rounded-lg cursor-pointer hover:bg-orange-100 transition-colors">
-              <svg class="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              <span class="text-xs font-bold text-orange-900">ISO 27001 / SOC 2</span>
+            <div onclick="openModal('iso')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-2 bg-slate-50 rounded-lg cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs font-bold text-slate-900">ISO 27001 / SOC 2</span>
+              </div>
+              <span class="text-[9px] text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-tighter">Ver mais</span>
             </div>
-            <div onclick="openModal('lgpd')" class="flex items-center gap-2 p-2 bg-orange-50 rounded-lg cursor-pointer hover:bg-orange-100 transition-colors">
-              <svg class="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              <span class="text-xs font-bold text-orange-900">GDPR / LGPD Ready</span>
+            <div onclick="openModal('lgpd')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-2 bg-slate-50 rounded-lg cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs font-bold text-slate-900">GDPR / LGPD Ready</span>
+              </div>
+              <span class="text-[9px] text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-tighter">Ver mais</span>
             </div>
           </div>
         </div>
@@ -265,21 +292,49 @@
       <!-- Configuração de Moeda -->
       <section class="mb-12 bg-white border border-slate-200 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
         <div class="flex items-center gap-4">
-          <div class="bg-indigo-600 text-white p-3 rounded-xl shadow-inner">
+          <div class="bg-indigo-600 text-white p-3 rounded-xl shadow-inner relative">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
+            <div id="loading-indicator" class="hidden absolute inset-0 bg-indigo-600 rounded-xl flex items-center justify-center">
+               <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+            </div>
           </div>
           <div>
-            <h4 class="font-bold text-slate-900">Conversão de Orçamento (R$)</h4>
-            <p class="text-sm text-slate-500 italic">Custo base: São Paulo (sa-east-1) vs. Global.</p>
+            <h4 class="font-bold text-slate-900 flex items-center gap-2">
+              Cotação do Dólar (PTAX)
+              <button onclick="fetchDollarRate()" class="text-indigo-500 hover:text-indigo-700 p-1 rounded-full hover:bg-indigo-50 transition-colors" title="Atualizar Cotação">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </button>
+            </h4>
+            <p class="text-sm text-slate-500 italic" id="rate-status">Custo base: São Paulo (sa-east-1) vs. Global.</p>
           </div>
         </div>
-        <div class="flex items-center gap-3 bg-slate-50 p-2 rounded-xl border border-slate-200">
-          <span class="pl-3 font-bold text-slate-400">R$</span>
-          <input type="number" step="0.01" id="exchange-rate" value="5.50" class="w-24 p-2 text-xl font-bold text-indigo-900 bg-transparent outline-none" />
+        <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-2xl border border-slate-200">
+          <div class="flex flex-col items-end pr-4 border-r border-slate-200">
+            <span class="text-[10px] text-slate-400 font-black uppercase tracking-[0.1em] mb-1">Cotação Dólar</span>
+            <div class="flex items-center gap-1">
+              <span class="font-bold text-slate-400 text-base">R$</span>
+              <input type="number" step="0.01" id="exchange-rate" value="5.50" class="w-24 p-1 text-2xl font-black text-indigo-900 bg-transparent outline-none text-right" />
+            </div>
+          </div>
+          <div class="flex flex-col items-start pl-1">
+            <span class="text-[10px] text-slate-400 font-black uppercase tracking-[0.1em] mb-1">IOF (Cartão)</span>
+            <div class="flex items-center gap-1">
+              <input type="number" step="0.01" id="iof-rate" value="3.38" class="w-20 p-1 text-2xl font-black text-orange-600 bg-transparent outline-none" />
+              <span class="font-bold text-slate-400 text-base">%</span>
+            </div>
+          </div>
         </div>
       </section>
+
+      <div class="max-w-6xl mx-auto -mt-8 mb-12 px-2">
+        <p class="text-[10px] text-slate-400 italic leading-relaxed text-center md:text-left">
+          <strong>Nota Técnica:</strong> A cotação utiliza a taxa PTAX (venda) atualizada via API. O IOF de 3,38% reflete a alíquota vigente para 2025 em transações internacionais de cartões de crédito. Estes valores impactam diretamente o ROI, pois o faturamento da Cloudflare é realizado em USD.
+        </p>
+      </div>
 
       <!-- Tabela Comparativa Detalhada -->
       <section class="mb-20 overflow-hidden bg-white rounded-3xl shadow-lg border border-slate-200">
@@ -288,27 +343,39 @@
             <tr>
               <th class="p-6 font-bold text-slate-500 uppercase text-xs tracking-widest">Serviço / Operação</th>
               <th class="p-6 font-bold text-slate-500 uppercase text-xs tracking-widest text-center">AWS São Paulo</th>
-              <th class="p-6 font-bold text-indigo-700 bg-indigo-50/50 uppercase text-xs tracking-widest text-center">Cloudflare R2</th>
+              <th class="p-6 font-bold text-indigo-700 bg-indigo-50/50 uppercase text-xs tracking-widest text-center">
+                Cloudflare R2
+                <span class="block text-[9px] text-indigo-400 font-medium mt-1">Inclui Free Tier Mensal</span>
+              </th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100 text-sm font-medium">
             <tr>
-              <td class="p-6">Armazenamento (por GB/mês)</td>
+              <td class="p-6">
+                Armazenamento (por GB/mês)
+                <span class="block text-[10px] text-slate-400 font-normal mt-1">Primeiros 10 GB são grátis no R2</span>
+              </td>
               <td class="p-6 text-center font-mono" id="table-aws-storage">R$ 0,00</td>
               <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center font-mono" id="table-r2-storage">R$ 0,00</td>
             </tr>
             <tr>
               <td class="p-6 font-bold text-orange-600 italic">Saída de Dados (Egress / GB)</td>
               <td class="p-6 text-center font-mono" id="table-aws-egress">R$ 0,00</td>
-              <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center uppercase tracking-tighter decoration-green-400 underline underline-offset-4">Grátis (R$ 0)</td>
+              <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center uppercase tracking-tighter decoration-green-400 underline underline-offset-4">Grátis (Ilimitado)</td>
             </tr>
             <tr>
-              <td class="p-6">Escrita (Classe A / 1M ops)</td>
+              <td class="p-6">
+                Escrita (Classe A / 1M ops)
+                <span class="block text-[10px] text-slate-400 font-normal mt-1">Primeiro 1 Milhão é grátis no R2</span>
+              </td>
               <td class="p-6 text-center font-mono" id="table-aws-opsa">R$ 0,00</td>
               <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center font-mono" id="table-r2-opsa">R$ 0,00</td>
             </tr>
             <tr>
-              <td class="p-6">Leitura (Classe B / 1M ops)</td>
+              <td class="p-6">
+                Leitura (Classe B / 1M ops)
+                <span class="block text-[10px] text-slate-400 font-normal mt-1">Primeiros 10 Milhões são grátis no R2</span>
+              </td>
               <td class="p-6 text-center font-mono" id="table-aws-opsb">R$ 0,00</td>
               <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center font-mono" id="table-r2-opsb">R$ 0,00</td>
             </tr>
@@ -430,6 +497,7 @@
       const inputOpsA = document.getElementById("input-opsa");
       const inputOpsB = document.getElementById("input-opsb");
       const exchangeRateInput = document.getElementById("exchange-rate");
+      const iofInput = document.getElementById("iof-rate");
 
       function updateUI() {
         const storage = parseFloat(inputStorage.value);
@@ -437,17 +505,33 @@
         const opsAVal = parseFloat(inputOpsA.value) || 0;
         const opsBVal = parseFloat(inputOpsB.value) || 0;
         const rate = parseFloat(exchangeRateInput.value) || 5.5;
+        const iof = parseFloat(iofInput.value) || 0;
+
+        // Free Tier Limits (R2)
+        const freeTier = {
+          storage: 10,
+          opsA: 1,
+          opsB: 10
+        };
 
         // Update displays
         document.getElementById("display-storage").innerText = storage >= 1000 ? (storage / 1024).toFixed(1) + " TB" : storage + " GB";
         document.getElementById("display-egress").innerText = (egress / 1024).toFixed(1) + " TB";
 
-        // Calculations in USD then converted
+        // Calculations in USD
         const awsUSD = storage * awsSP.storage + egress * awsSP.egress + opsAVal * awsSP.opsA + opsBVal * awsSP.opsB;
-        const r2USD = storage * r2Global.storage + egress * r2Global.egress + opsAVal * r2Global.opsA + opsBVal * r2Global.opsB;
+        
+        // R2 with Free Tier Subtraction
+        const r2StorageUSD = Math.max(0, storage - freeTier.storage) * r2Global.storage;
+        const r2OpsAUSD = Math.max(0, opsAVal - freeTier.opsA) * r2Global.opsA;
+        const r2OpsBUSD = Math.max(0, opsBVal - freeTier.opsB) * r2Global.opsB;
+        
+        const r2USD = r2StorageUSD + r2OpsAUSD + r2OpsBUSD; // Egress is 0
 
-        const awsBRL = awsUSD * rate;
-        const r2BRL = r2USD * rate;
+        // Convert to BRL
+        const awsBRL = awsUSD * rate; 
+        const r2BRL = r2USD * rate * (1 + iof / 100);
+
         const savings = awsBRL - r2BRL;
         const savingsPct = awsBRL > 0 ? Math.round((savings / awsBRL) * 100) : 0;
 
@@ -462,17 +546,26 @@
         const pctBar = (r2BRL / awsBRL) * 100;
         document.getElementById("progress-r2").style.width = Math.max(pctBar, 10) + "%";
 
-        // Table update
+        // Table update (Detailed view)
+        // We apply IOF to the R2 unit prices in the table for transparency? 
+        // Or just keep unit prices as base? Let's show base BRL unit prices for clarity, 
+        // but the Total above includes IOF. 
+        // Better: Apply IOF to the R2 table values so the math matches the total.
+        const iofMult = (1 + iof / 100);
+        
         document.getElementById("table-aws-storage").innerText = "R$ " + (awsSP.storage * rate).toFixed(4).replace(".", ",");
-        document.getElementById("table-r2-storage").innerText = "R$ " + (r2Global.storage * rate).toFixed(4).replace(".", ",");
+        document.getElementById("table-r2-storage").innerText = "R$ " + (r2Global.storage * rate * iofMult).toFixed(4).replace(".", ",");
+        
         document.getElementById("table-aws-egress").innerText = "R$ " + (awsSP.egress * rate).toFixed(4).replace(".", ",");
+        
         document.getElementById("table-aws-opsa").innerText = "R$ " + (awsSP.opsA * rate).toFixed(4).replace(".", ",");
-        document.getElementById("table-r2-opsa").innerText = "R$ " + (r2Global.opsA * rate).toFixed(4).replace(".", ",");
+        document.getElementById("table-r2-opsa").innerText = "R$ " + (r2Global.opsA * rate * iofMult).toFixed(4).replace(".", ",");
+        
         document.getElementById("table-aws-opsb").innerText = "R$ " + (awsSP.opsB * rate).toFixed(4).replace(".", ",");
-        document.getElementById("table-r2-opsb").innerText = "R$ " + (r2Global.opsB * rate).toFixed(4).replace(".", ",");
+        document.getElementById("table-r2-opsb").innerText = "R$ " + (r2Global.opsB * rate * iofMult).toFixed(4).replace(".", ",");
       }
 
-      [inputStorage, inputEgress, inputOpsA, inputOpsB, exchangeRateInput].forEach((el) => el.addEventListener("input", updateUI));
+      [inputStorage, inputEgress, inputOpsA, inputOpsB, exchangeRateInput, iofInput].forEach((el) => el.addEventListener("input", updateUI));
 
       // Modal Logic
       const definitions = {
@@ -533,7 +626,43 @@
         if (e.target.id === 'info-modal') closeModal();
       });
 
+      // Currency API
+      async function fetchDollarRate() {
+        const statusEl = document.getElementById('rate-status');
+        const loader = document.getElementById('loading-indicator');
+        
+        statusEl.innerText = "Atualizando cotação...";
+        loader.classList.remove('hidden');
+
+        try {
+          const response = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL');
+          const data = await response.json();
+          
+          if (data && data.USDBRL && data.USDBRL.bid) {
+             const rate = parseFloat(data.USDBRL.bid).toFixed(2);
+             document.getElementById('exchange-rate').value = rate;
+             
+             const now = new Date();
+             const timeStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+             statusEl.innerText = `Atualizado às ${timeStr} (Fonte: AwesomeAPI)`;
+             statusEl.classList.add('text-green-600');
+             
+             updateUI(); // Recalculate everything with new rate
+          } else {
+             throw new Error("Dados inválidos");
+          }
+        } catch (error) {
+           console.error("Erro ao buscar dolar:", error);
+           statusEl.innerText = "Falha ao obter cotação automática. Usando valor padrão.";
+           statusEl.classList.add('text-red-500');
+        } finally {
+           loader.classList.add('hidden');
+        }
+      }
+
       // Init
+      inputStorage.value = 500; // Garantir valor inicial de 500GB
+      fetchDollarRate(); // Try to get real rate on load
       updateUI();
 
       // Presentation Logic
