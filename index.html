@@ -150,296 +150,314 @@
     <main id="main-content" class="max-w-6xl mx-auto px-6 py-24 presentation-hidden">
 
       <!-- Contexto Inicial -->
-      <section id="details" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 scroll-mt-24">
-        <div class="bg-white p-8 rounded-3xl shadow-xl border-l-4 border-l-slate-900 border border-slate-100 relative overflow-hidden group">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="p-3 bg-slate-900 text-white rounded-2xl shadow-lg shadow-slate-200">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <section id="details" class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 scroll-mt-24">
+        <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border-l-4 border-l-slate-900 border border-slate-100 relative overflow-hidden group">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="p-4 bg-slate-900 text-white rounded-2xl shadow-lg shadow-slate-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
             </div>
-            <h2 class="text-2xl font-bold text-slate-800 tracking-tight">Por que Storage de Objetos?</h2>
+            <h2 class="text-3xl font-bold text-slate-800 tracking-tight">Por que Storage de Objetos?</h2>
           </div>
-          <p class="text-slate-600 leading-relaxed mb-4">
+          <p class="text-slate-600 text-lg leading-loose mb-6">
             Para a nossa nova plataforma, precisamos de uma solução que escale infinitamente sem a complexidade de gerenciar servidores de arquivos tradicionais.
           </p>
-          <ul class="space-y-3">
-            <li onclick="openModal('flexibilidade')" title="Clique para ver mais detalhes" class="flex items-center justify-between gap-2 text-sm text-slate-700 font-medium cursor-pointer hover:bg-slate-50 p-2 rounded-lg transition-all border border-transparent hover:border-slate-200 group/item">
-              <div class="flex items-start gap-2">
-                <span class="text-slate-900 mt-1">●</span>
-                <span><strong>Flexibilidade:</strong> Perfeito para imagens, backups e logs.</span>
+          <ul class="space-y-4">
+            <li onclick="openModal('flexibilidade')" title="Clique para ver mais detalhes" class="flex items-center justify-between gap-3 text-base text-slate-700 font-medium cursor-pointer hover:bg-slate-50 p-3 rounded-xl transition-all border border-transparent hover:border-slate-200 group/item">
+              <div class="flex items-start gap-3">
+                <span class="text-slate-900 mt-1.5 text-xl">●</span>
+                <span><strong>Flexibilidade:</strong> Perfeito para <strong>PDFs, Planilhas</strong>, imagens e backups da nossa plataforma.</span>
               </div>
-              <span class="text-[9px] text-slate-400 opacity-0 group-hover/item:opacity-100 transition-opacity font-bold uppercase tracking-tighter shrink-0">Ver mais</span>
+              <span class="text-[10px] text-slate-400 opacity-0 group-hover/item:opacity-100 transition-opacity font-bold uppercase tracking-tighter shrink-0">Ver mais</span>
             </li>
-            <li onclick="openModal('cdn')" title="Clique para ver mais detalhes" class="flex items-center justify-between gap-2 text-sm text-slate-700 font-medium cursor-pointer hover:bg-slate-50 p-2 rounded-lg transition-all border border-transparent hover:border-slate-200 group/item">
-              <div class="flex items-start gap-2">
-                <span class="text-slate-900 mt-1">●</span>
+            <li onclick="openModal('cdn')" title="Clique para ver mais detalhes" class="flex items-center justify-between gap-3 text-base text-slate-700 font-medium cursor-pointer hover:bg-slate-50 p-3 rounded-xl transition-all border border-transparent hover:border-slate-200 group/item">
+              <div class="flex items-start gap-3">
+                <span class="text-slate-900 mt-1.5 text-xl">●</span>
                 <span><strong>Integração CDN:</strong> O conteúdo fica "na borda", mais perto do usuário final.</span>
               </div>
-              <span class="text-[9px] text-slate-400 opacity-0 group-hover/item:opacity-100 transition-opacity font-bold uppercase tracking-tighter shrink-0">Ver mais</span>
+              <span class="text-[10px] text-slate-400 opacity-0 group-hover/item:opacity-100 transition-opacity font-bold uppercase tracking-tighter shrink-0">Ver mais</span>
+            </li>
+            <li onclick="openModal('replicacao')" title="Clique para ver mais detalhes" class="flex items-center justify-between gap-3 text-base text-slate-700 font-medium cursor-pointer hover:bg-slate-50 p-3 rounded-xl transition-all border border-transparent hover:border-slate-200 group/item">
+              <div class="flex items-start gap-3">
+                <span class="text-slate-900 mt-1.5 text-xl">●</span>
+                <span><strong>Replicação Global:</strong> Dados protegidos e replicados em múltiplos data centers.</span>
+              </div>
+              <span class="text-[10px] text-slate-400 opacity-0 group-hover/item:opacity-100 transition-opacity font-bold uppercase tracking-tighter shrink-0">Ver mais</span>
             </li>
           </ul>
         </div>
 
-        <div class="bg-white p-8 rounded-3xl shadow-xl border-l-4 border-l-slate-900 border border-slate-100 relative overflow-hidden group">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="p-3 bg-slate-900 text-white rounded-2xl shadow-lg shadow-slate-200">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border-l-4 border-l-slate-900 border border-slate-100 relative overflow-hidden group">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="p-4 bg-slate-900 text-white rounded-2xl shadow-lg shadow-slate-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <h2 class="text-2xl font-bold text-slate-800 tracking-tight">Segurança & Compliance</h2>
+            <h2 class="text-3xl font-bold text-slate-800 tracking-tight">Segurança & Compliance</h2>
           </div>
-          <p class="text-slate-600 leading-relaxed mb-4 text-sm font-medium">
+          <p class="text-slate-600 text-lg leading-loose mb-6 font-medium">
             Ao contratar a Cloudflare, não levamos apenas storage, mas herdamos a segurança da rede mais robusta do mundo.
           </p>
-          <div class="grid grid-cols-2 gap-3 mt-2">
-            <div onclick="openModal('aes')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-2 bg-slate-50 rounded-lg cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
-              <div class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                <span class="text-xs font-bold text-slate-900">Criptografia AES-256</span>
+          <div class="flex flex-col gap-3 mt-6">
+            <div onclick="openModal('aes')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
+              <div class="flex items-center gap-4">
+                <div class="p-2 bg-white rounded-lg shadow-sm">
+                  <svg class="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <span class="text-base font-bold text-slate-900 tracking-tight">Criptografia de Dados (AES-256)</span>
               </div>
-              <span class="text-[9px] text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-tighter">Ver mais</span>
+              <span class="text-xs text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-widest pr-2">Ver mais</span>
             </div>
-            <div onclick="openModal('ddos')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-2 bg-slate-50 rounded-lg cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
-              <div class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                <span class="text-xs font-bold text-slate-900">Proteção DDoS L7</span>
+            
+            <div onclick="openModal('ddos')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
+              <div class="flex items-center gap-4">
+                <div class="p-2 bg-white rounded-lg shadow-sm">
+                  <svg class="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <span class="text-base font-bold text-slate-900 tracking-tight">Proteção DDoS Avançada (L7)</span>
               </div>
-              <span class="text-[9px] text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-tighter">Ver mais</span>
+              <span class="text-xs text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-widest pr-2">Ver mais</span>
             </div>
-            <div onclick="openModal('iso')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-2 bg-slate-50 rounded-lg cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
-              <div class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                <span class="text-xs font-bold text-slate-900">ISO 27001 / SOC 2</span>
+
+            <div onclick="openModal('iso')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
+              <div class="flex items-center gap-4">
+                <div class="p-2 bg-white rounded-lg shadow-sm">
+                  <svg class="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <span class="text-base font-bold text-slate-900 tracking-tight">Conformidade ISO 27001 / SOC 2</span>
               </div>
-              <span class="text-[9px] text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-tighter">Ver mais</span>
+              <span class="text-xs text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-widest pr-2">Ver mais</span>
             </div>
-            <div onclick="openModal('lgpd')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-2 bg-slate-50 rounded-lg cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
-              <div class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                <span class="text-xs font-bold text-slate-900">GDPR / LGPD Ready</span>
+
+            <div onclick="openModal('lgpd')" title="Clique para ver mais detalhes" class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl cursor-pointer hover:bg-slate-100 transition-all border border-transparent hover:border-slate-200 group/sec">
+              <div class="flex items-center gap-4">
+                <div class="p-2 bg-white rounded-lg shadow-sm">
+                  <svg class="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <span class="text-base font-bold text-slate-900 tracking-tight">Privacidade GDPR / LGPD Ready</span>
               </div>
-              <span class="text-[9px] text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-tighter">Ver mais</span>
+              <span class="text-xs text-slate-400 opacity-0 group-hover/sec:opacity-100 transition-opacity font-bold uppercase tracking-widest pr-2">Ver mais</span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Glossário Aprofundado -->
-      <section class="mb-16">
-        <div class="text-center mb-10">
-          <h2 class="text-3xl font-bold text-slate-800 mb-2">Entendendo os Custos da Nuvem</h2>
-          <p class="text-slate-500 max-w-2xl mx-auto italic">Para uma decisão estratégica, é preciso compreender como cada componente impacta a fatura final.</p>
+      <section class="mb-20">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-800 mb-4">Entendendo os Custos da Nuvem</h2>
+          <p class="text-slate-500 text-xl max-w-3xl mx-auto italic">Para uma decisão estratégica, é preciso compreender como cada componente impacta a fatura final.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
           <!-- Egress -->
-          <div class="bg-white p-8 rounded-3xl shadow-lg border-l-4 border-l-indigo-500 border border-slate-100">
-            <div class="text-indigo-600 mb-4 bg-indigo-50 w-fit p-3 rounded-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="bg-white p-10 rounded-[2.5rem] shadow-lg border-l-4 border-l-indigo-500 border border-slate-100">
+            <div class="text-indigo-600 mb-6 bg-indigo-50 w-fit p-4 rounded-2xl">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </div>
-            <h3 class="text-xl font-bold mb-3">Egresso (Saída de Dados)</h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4 italic">É a cobrança sobre os dados que <strong>saem</strong> da nuvem para o usuário.</p>
-            <div class="bg-slate-50 p-4 rounded-2xl text-[11px] text-slate-500 italic">
+            <h3 class="text-2xl font-bold mb-4">Egresso (Saída de Dados)</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6 italic">É a cobrança sobre os dados que <strong>saem</strong> da nuvem para o usuário.</p>
+            <div class="bg-slate-50 p-6 rounded-2xl text-sm text-slate-500 italic border border-slate-100">
               <strong>O Risco:</strong> "Taxa sobre o sucesso". Quanto mais usuários acessam nossos dados, mais caro fica. No R2, esta taxa é <strong>zero</strong>.
             </div>
           </div>
 
           <!-- Lock-in -->
-          <div class="bg-white p-8 rounded-3xl shadow-lg border-l-4 border-l-orange-400 border border-slate-100 relative overflow-hidden">
-            <div class="text-orange-600 mb-4 bg-orange-50 w-fit p-3 rounded-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="bg-white p-10 rounded-[2.5rem] shadow-lg border-l-4 border-l-orange-400 border border-slate-100 relative overflow-hidden">
+            <div class="text-orange-600 mb-6 bg-orange-50 w-fit p-4 rounded-2xl">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
-            <h3 class="text-xl font-bold mb-3">Vendor Lock-in</h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4 italic">Dificuldade financeira de trocar de fornecedor no futuro devido às altas taxas de saída.</p>
-            <div class="bg-slate-50 p-4 rounded-2xl text-[11px] text-slate-500 italic">
+            <h3 class="text-2xl font-bold mb-4">Vendor Lock-in</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6 italic">Dificuldade financeira de trocar de fornecedor no futuro devido às altas taxas de saída.</p>
+            <div class="bg-slate-50 p-6 rounded-2xl text-sm text-slate-500 italic border border-slate-100">
               <strong>Prevenção:</strong> Escolher o R2 garante que nossos dados permaneçam portáteis e acessíveis sem "multas" de migração.
             </div>
           </div>
 
           <!-- Escrita -->
-          <div class="bg-white p-8 rounded-3xl shadow-lg border-l-4 border-l-blue-500 border border-slate-100">
-            <div class="text-blue-600 mb-4 bg-blue-50 w-fit p-3 rounded-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="bg-white p-10 rounded-[2.5rem] shadow-lg border-l-4 border-l-blue-500 border border-slate-100">
+            <div class="text-blue-600 mb-6 bg-blue-50 w-fit p-4 rounded-2xl">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
               </svg>
             </div>
-            <h3 class="text-xl font-bold mb-3">Escrita (Classe A)</h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4 italic">Custo para <strong>inserir ou modificar</strong> dados.</p>
-            <div class="bg-slate-50 p-4 rounded-2xl text-[11px] text-slate-500 italic uppercase font-bold tracking-widest">Exemplos: Upload de ficheiros e criação de backups.</div>
+            <h3 class="text-2xl font-bold mb-4">Escrita (Classe A)</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6 italic">Custo para <strong>inserir ou modificar</strong> dados.</p>
+            <div class="bg-slate-50 p-6 rounded-2xl text-sm text-slate-500 italic uppercase font-bold tracking-widest border border-slate-100">Exemplos: Upload de ficheiros e criação de backups.</div>
           </div>
 
           <!-- Leitura -->
-          <div class="bg-white p-8 rounded-3xl shadow-lg border-l-4 border-l-green-500 border border-slate-100">
-            <div class="text-green-600 mb-4 bg-green-50 w-fit p-3 rounded-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="bg-white p-10 rounded-[2.5rem] shadow-lg border-l-4 border-l-green-500 border border-slate-100">
+            <div class="text-green-600 mb-6 bg-green-50 w-fit p-4 rounded-2xl">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
             </div>
-            <h3 class="text-xl font-bold mb-3">Leitura (Classe B)</h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-4 italic">Custo para <strong>visualizar ou consultar</strong> dados.</p>
-            <div class="bg-slate-50 p-4 rounded-2xl text-[11px] text-slate-500 italic uppercase font-bold tracking-widest">Exemplos: Abrir uma imagem ou gerar um relatório.</div>
+            <h3 class="text-2xl font-bold mb-4">Leitura (Classe B)</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6 italic">Custo para <strong>visualizar ou consultar</strong> dados.</p>
+            <div class="bg-slate-50 p-6 rounded-2xl text-sm text-slate-500 italic uppercase font-bold tracking-widest border border-slate-100">Exemplos: Abrir uma imagem ou gerar um relatório.</div>
           </div>
         </div>
       </section>
 
       <!-- Configuração de Moeda -->
-      <section class="mb-12 bg-white border border-slate-200 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-        <div class="flex items-center gap-4">
-          <div class="bg-indigo-600 text-white p-3 rounded-xl shadow-inner relative">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <section class="mb-12 bg-white border border-slate-200 p-10 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-10 shadow-sm">
+        <div class="flex items-center gap-6">
+          <div class="bg-indigo-600 text-white p-4 rounded-2xl shadow-inner relative">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <div id="loading-indicator" class="hidden absolute inset-0 bg-indigo-600 rounded-xl flex items-center justify-center">
-               <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+               <svg class="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
             </div>
           </div>
           <div>
-            <h4 class="font-bold text-slate-900 flex items-center gap-2">
+            <h4 class="text-xl font-bold text-slate-900 flex items-center gap-3">
               Cotação do Dólar (PTAX)
-              <button onclick="fetchDollarRate()" class="text-indigo-500 hover:text-indigo-700 p-1 rounded-full hover:bg-indigo-50 transition-colors" title="Atualizar Cotação">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <button onclick="fetchDollarRate()" class="text-indigo-500 hover:text-indigo-700 p-2 rounded-full hover:bg-indigo-50 transition-colors" title="Atualizar Cotação">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </button>
             </h4>
-            <p class="text-sm text-slate-500 italic" id="rate-status">Custo base: São Paulo (sa-east-1) vs. Global.</p>
+            <p class="text-base text-slate-500 italic mt-1" id="rate-status">Custo base: São Paulo (sa-east-1) vs. Global.</p>
           </div>
         </div>
-        <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-2xl border border-slate-200">
-          <div class="flex flex-col items-end pr-4 border-r border-slate-200">
-            <span class="text-[10px] text-slate-400 font-black uppercase tracking-[0.1em] mb-1">Cotação Dólar</span>
+        <div class="flex items-center gap-6 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+          <div class="flex flex-col items-end pr-6 border-r border-slate-200">
+            <span class="text-xs text-slate-400 font-black uppercase tracking-[0.1em] mb-1">Cotação Dólar</span>
             <div class="flex items-center gap-1">
-              <span class="font-bold text-slate-400 text-base">R$</span>
-              <input type="number" step="0.01" id="exchange-rate" value="5.50" class="w-24 p-1 text-2xl font-black text-indigo-900 bg-transparent outline-none text-right" />
+              <span class="font-bold text-slate-400 text-lg">R$</span>
+              <input type="number" step="0.01" id="exchange-rate" value="5.50" class="w-28 p-1 text-3xl font-black text-indigo-900 bg-transparent outline-none text-right" />
             </div>
           </div>
-          <div class="flex flex-col items-start pl-1">
-            <span class="text-[10px] text-slate-400 font-black uppercase tracking-[0.1em] mb-1">IOF (Cartão)</span>
+          <div class="flex flex-col items-start pl-2">
+            <span class="text-xs text-slate-400 font-black uppercase tracking-[0.1em] mb-1">IOF (Cartão)</span>
             <div class="flex items-center gap-1">
-              <input type="number" step="0.01" id="iof-rate" value="3.38" class="w-20 p-1 text-2xl font-black text-orange-600 bg-transparent outline-none" />
-              <span class="font-bold text-slate-400 text-base">%</span>
+              <input type="number" step="0.01" id="iof-rate" value="3.38" class="w-24 p-1 text-3xl font-black text-orange-600 bg-transparent outline-none" />
+              <span class="font-bold text-slate-400 text-lg">%</span>
             </div>
           </div>
         </div>
       </section>
 
-      <div class="max-w-6xl mx-auto -mt-8 mb-12 px-2">
-        <p class="text-[10px] text-slate-400 italic leading-relaxed text-center md:text-left">
+      <div class="max-w-6xl mx-auto -mt-8 mb-16 px-4">
+        <p class="text-xs text-slate-400 italic leading-relaxed text-center md:text-left">
           <strong>Nota Técnica:</strong> A cotação utiliza a taxa PTAX (venda) atualizada via API. O IOF de 3,38% reflete a alíquota vigente para 2025 em transações internacionais de cartões de crédito. Estes valores impactam diretamente o ROI, pois o faturamento da Cloudflare é realizado em USD.
         </p>
       </div>
 
       <!-- Tabela Comparativa Detalhada -->
-      <section class="mb-20 overflow-hidden bg-white rounded-3xl shadow-lg border border-slate-200">
+      <section class="mb-24 overflow-hidden bg-white rounded-[2.5rem] shadow-lg border border-slate-200">
         <table class="w-full text-left">
           <thead class="bg-slate-50 border-b border-slate-200">
             <tr>
-              <th class="p-6 font-bold text-slate-500 uppercase text-xs tracking-widest">Serviço / Operação</th>
-              <th class="p-6 font-bold text-slate-500 uppercase text-xs tracking-widest text-center">AWS São Paulo</th>
-              <th class="p-6 font-bold text-indigo-700 bg-indigo-50/50 uppercase text-xs tracking-widest text-center">
+              <th class="p-8 font-bold text-slate-500 uppercase text-xs tracking-widest">Serviço / Operação</th>
+              <th class="p-8 font-bold text-slate-500 uppercase text-xs tracking-widest text-center">AWS São Paulo</th>
+              <th class="p-8 font-bold text-indigo-700 bg-indigo-50/50 uppercase text-xs tracking-widest text-center">
                 Cloudflare R2
-                <span class="block text-[9px] text-indigo-400 font-medium mt-1">Inclui Free Tier Mensal</span>
+                <span class="block text-[10px] text-indigo-400 font-medium mt-1">Inclui Free Tier Mensal</span>
               </th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-100 text-sm font-medium">
+          <tbody class="divide-y divide-slate-100 text-base font-medium">
             <tr>
-              <td class="p-6">
+              <td class="p-8">
                 Armazenamento (por GB/mês)
-                <span class="block text-[10px] text-slate-400 font-normal mt-1">Primeiros 10 GB são grátis no R2</span>
+                <span class="block text-xs text-slate-400 font-normal mt-1">Primeiros 10 GB são grátis no R2</span>
               </td>
-              <td class="p-6 text-center font-mono" id="table-aws-storage">R$ 0,00</td>
-              <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center font-mono" id="table-r2-storage">R$ 0,00</td>
+              <td class="p-8 text-center font-mono text-lg" id="table-aws-storage">R$ 0,00</td>
+              <td class="p-8 text-green-600 font-bold bg-indigo-50/20 text-center font-mono text-lg" id="table-r2-storage">R$ 0,00</td>
             </tr>
             <tr>
-              <td class="p-6 font-bold text-orange-600 italic">Saída de Dados (Egress / GB)</td>
-              <td class="p-6 text-center font-mono" id="table-aws-egress">R$ 0,00</td>
-              <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center uppercase tracking-tighter decoration-green-400 underline underline-offset-4">Grátis (Ilimitado)</td>
+              <td class="p-8 font-bold text-orange-600 italic">Saída de Dados (Egress / GB)</td>
+              <td class="p-8 text-center font-mono text-lg" id="table-aws-egress">R$ 0,00</td>
+              <td class="p-8 text-green-600 font-bold bg-indigo-50/20 text-center uppercase tracking-tighter decoration-green-400 underline underline-offset-4 text-sm">Grátis (Ilimitado)</td>
             </tr>
             <tr>
-              <td class="p-6">
+              <td class="p-8">
                 Escrita (Classe A / 1M ops)
-                <span class="block text-[10px] text-slate-400 font-normal mt-1">Primeiro 1 Milhão é grátis no R2</span>
+                <span class="block text-xs text-slate-400 font-normal mt-1">Primeiro 1 Milhão é grátis no R2</span>
               </td>
-              <td class="p-6 text-center font-mono" id="table-aws-opsa">R$ 0,00</td>
-              <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center font-mono" id="table-r2-opsa">R$ 0,00</td>
+              <td class="p-8 text-center font-mono text-lg" id="table-aws-opsa">R$ 0,00</td>
+              <td class="p-8 text-green-600 font-bold bg-indigo-50/20 text-center font-mono text-lg" id="table-r2-opsa">R$ 0,00</td>
             </tr>
             <tr>
-              <td class="p-6">
+              <td class="p-8">
                 Leitura (Classe B / 1M ops)
-                <span class="block text-[10px] text-slate-400 font-normal mt-1">Primeiros 10 Milhões são grátis no R2</span>
+                <span class="block text-xs text-slate-400 font-normal mt-1">Primeiros 10 Milhões são grátis no R2</span>
               </td>
-              <td class="p-6 text-center font-mono" id="table-aws-opsb">R$ 0,00</td>
-              <td class="p-6 text-green-600 font-bold bg-indigo-50/20 text-center font-mono" id="table-r2-opsb">R$ 0,00</td>
+              <td class="p-8 text-center font-mono text-lg" id="table-aws-opsb">R$ 0,00</td>
+              <td class="p-8 text-green-600 font-bold bg-indigo-50/20 text-center font-mono text-lg" id="table-r2-opsb">R$ 0,00</td>
             </tr>
           </tbody>
         </table>
       </section>
 
       <!-- Simulador de Projeto Interativo -->
-      <section id="simulator" class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200 mb-20 scroll-mt-24">
+      <section id="simulator" class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-200 mb-24 scroll-mt-24">
         <div class="md:flex">
-          <div class="md:w-1/2 p-8 md:p-12 bg-slate-50 border-r border-slate-200">
-            <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">Simulador de Investimento</h2>
-            <div class="space-y-10">
+          <div class="md:w-1/2 p-12 md:p-16 bg-slate-50 border-r border-slate-200">
+            <h2 class="text-3xl font-bold mb-10 flex items-center gap-3">Simulador de Investimento</h2>
+            <div class="space-y-12">
               <div>
                 <div class="flex justify-between items-end mb-4">
-                  <label class="text-sm font-bold text-slate-600 uppercase">Armazenamento (GB)</label>
-                  <span class="text-2xl font-black text-blue-600" id="display-storage">500 GB</span>
+                  <label class="text-base font-bold text-slate-600 uppercase tracking-wide">Armazenamento (GB)</label>
+                  <span class="text-3xl font-black text-blue-600" id="display-storage">500 GB</span>
                 </div>
-                <input type="range" id="input-storage" min="100" max="100000" step="100" value="500" class="w-full h-2 bg-slate-200 rounded-lg appearance-none accent-blue-600" />
+                <input type="range" id="input-storage" min="100" max="100000" step="100" value="500" class="w-full h-3 bg-slate-200 rounded-lg appearance-none accent-blue-600 hover:accent-blue-700 cursor-pointer" />
               </div>
               <div>
                 <div class="flex justify-between items-end mb-4 text-orange-600">
-                  <label class="text-sm font-bold uppercase">Saída de Dados (Egress)</label>
-                  <span class="text-2xl font-black" id="display-egress">1.0 TB</span>
+                  <label class="text-base font-bold uppercase tracking-wide">Saída de Dados (Egress)</label>
+                  <span class="text-3xl font-black" id="display-egress">1.0 TB</span>
                 </div>
-                <input type="range" id="input-egress" min="0" max="100000" step="500" value="1000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none accent-orange-500" />
+                <input type="range" id="input-egress" min="0" max="100000" step="500" value="1000" class="w-full h-3 bg-slate-200 rounded-lg appearance-none accent-orange-500 hover:accent-orange-600 cursor-pointer" />
               </div>
-              <div class="grid grid-cols-2 gap-6 pt-4 border-t border-slate-200">
+              <div class="grid grid-cols-2 gap-8 pt-6 border-t border-slate-200">
                 <div>
-                  <label class="text-[10px] font-bold text-slate-400 uppercase block mb-2 text-center tracking-widest">Escrita (Milhões)</label>
-                  <input type="number" id="input-opsa" value="1" class="w-full p-2 bg-white border border-slate-200 rounded-lg text-center font-bold text-indigo-900 outline-none" />
+                  <label class="text-xs font-bold text-slate-400 uppercase block mb-3 text-center tracking-widest">Escrita (Milhões)</label>
+                  <input type="number" id="input-opsa" value="1" class="w-full p-3 bg-white border border-slate-200 rounded-xl text-center text-xl font-bold text-indigo-900 outline-none focus:border-indigo-500 transition-colors" />
                 </div>
                 <div>
-                  <label class="text-[10px] font-bold text-slate-400 uppercase block mb-2 text-center tracking-widest">Leitura (Milhões)</label>
-                  <input type="number" id="input-opsb" value="10" class="w-full p-2 bg-white border border-slate-200 rounded-lg text-center font-bold text-indigo-900 outline-none" />
+                  <label class="text-xs font-bold text-slate-400 uppercase block mb-3 text-center tracking-widest">Leitura (Milhões)</label>
+                  <input type="number" id="input-opsb" value="10" class="w-full p-3 bg-white border border-slate-200 rounded-xl text-center text-xl font-bold text-indigo-900 outline-none focus:border-indigo-500 transition-colors" />
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="md:w-1/2 p-8 md:p-12 bg-white flex flex-col justify-center">
-            <h3 class="text-slate-400 font-bold uppercase tracking-widest text-[10px] mb-8 italic text-center md:text-left">Projeção Mensal Estimada</h3>
-            <div class="space-y-8">
+          <div class="md:w-1/2 p-12 md:p-16 bg-white flex flex-col justify-center">
+            <h3 class="text-slate-400 font-bold uppercase tracking-widest text-xs mb-10 italic text-center md:text-left">Projeção Mensal Estimada</h3>
+            <div class="space-y-10">
               <div>
-                <div class="flex justify-between items-center mb-2">
-                  <span class="text-xs font-bold text-slate-400 italic uppercase">AWS S3 (São Paulo)</span>
-                  <span class="font-bold text-slate-800 text-xl" id="aws-total">R$ 0,00</span>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-sm font-bold text-slate-400 italic uppercase">AWS S3 (São Paulo)</span>
+                  <span class="font-bold text-slate-800 text-2xl" id="aws-total">R$ 0,00</span>
                 </div>
-                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden"><div class="bg-slate-300 h-full w-full"></div></div>
+                <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden"><div class="bg-slate-300 h-full w-full"></div></div>
               </div>
               <div>
-                <div class="flex justify-between items-center mb-2">
-                  <span class="text-xs font-bold text-indigo-600 uppercase underline decoration-2 decoration-indigo-200 underline-offset-4 tracking-wider">Cloudflare R2 (Proposta)</span>
-                  <span class="font-bold text-indigo-600 text-3xl" id="r2-total">R$ 0,00</span>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="text-sm font-bold text-indigo-600 uppercase underline decoration-2 decoration-indigo-200 underline-offset-4 tracking-wider">Cloudflare R2 (Proposta)</span>
+                  <span class="font-bold text-indigo-600 text-4xl" id="r2-total">R$ 0,00</span>
                 </div>
-                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
                   <div id="progress-r2" class="bg-indigo-600 h-full transition-all duration-700 ease-out" style="width: 10%"></div>
                 </div>
               </div>
-              <div class="pt-8 border-t border-slate-100">
-                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-3xl border border-green-100 relative overflow-hidden text-center md:text-left shadow-inner">
-                  <p class="text-green-800 text-[10px] uppercase font-black tracking-[0.2em] mb-2 italic">Eficiência Gerada / Mês</p>
-                  <p class="text-5xl font-black text-green-600 mb-2 tracking-tighter" id="savings-val">R$ 0,00</p>
-                  <p class="text-green-700 font-bold text-sm italic" id="savings-pct">Economia de 0% no projeto</p>
+              <div class="pt-10 border-t border-slate-100">
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-10 rounded-[2rem] border border-green-100 relative overflow-hidden text-center md:text-left shadow-inner">
+                  <p class="text-green-800 text-xs uppercase font-black tracking-[0.2em] mb-3 italic">Eficiência Gerada / Mês</p>
+                  <p class="text-6xl font-black text-green-600 mb-3 tracking-tighter" id="savings-val">R$ 0,00</p>
+                  <p class="text-green-700 font-bold text-lg italic" id="savings-pct">Economia de 0% no projeto</p>
                 </div>
               </div>
             </div>
@@ -592,6 +610,10 @@
         'flexibilidade': {
           title: 'Flexibilidade de Storage',
           body: 'Capacidade de armazenar qualquer tipo de dado não estruturado (imagens, vídeos, backups, logs) sem precisar configurar discos rígidos, particionamento ou sistemas de arquivos complexos.'
+        },
+        'replicacao': {
+          title: 'Replicação Global & Durabilidade',
+          body: 'Seus arquivos são automaticamente replicados em múltiplos centros de dados da Cloudflare. Isso garante uma durabilidade de 99.999999999% (onze noves), protegendo contra falhas físicas e garantindo que os dados nunca sejam perdidos, mesmo em catástrofes regionais.'
         }
       };
 
